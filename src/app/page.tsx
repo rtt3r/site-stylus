@@ -1,10 +1,26 @@
+'use client'
+
+import { useState } from 'react'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import Services from '../components/Services'
+import Booking from '../components/Booking'
+import About from '../components/About'
+import Testimonials from '../components/Testimonials'
+import Footer from '../components/Footer'
+
 export default function Home() {
+  const [activeSection, setActiveSection] = useState('home')
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-4">
-      <h1 className="text-4xl font-bold">Lasy AI</h1>
-      <p className="text-xl text-muted-foreground">
-        Pronto para criar algo incrível!
-      </p>
+    <div className="min-h-screen bg-dark text-light">
+      <Header setActiveSection={setActiveSection} />
+      <Hero />
+      <Services />
+      <Booking />
+      <About />
+      <Testimonials />
+      <Footer />
     </div>
   )
 }
